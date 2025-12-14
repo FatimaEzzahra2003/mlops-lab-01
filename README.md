@@ -47,7 +47,7 @@ Après exécution, un fichier CSV est créé automatiquement : data/raw.csv
 
 Cette étape prépare les données avant l’entraînement du modèle et vérifie leur qualité afin d’éviter des erreurs dans le pipeline MLOps.
 
-**-Création du fichier de préparation :
+**-Création du fichier de préparation :**
 
 <img width="640" height="184" alt="image" src="https://github.com/user-attachments/assets/20075172-bdce-4d5e-96dc-c83f239e2308" />
 
@@ -81,7 +81,7 @@ Après exécution du script, les fichiers suivants sont produits :
  
  -registry/train_stats.json : statistiques (moyenne, écart-type) des variables numériques, utiles pour la normalisation.
 
-## Entraîner, versionner et valider le modèle
+## 4.Entraîner, versionner et valider le modèle
 
 Cette étape permet d’entraîner un modèle de churn, de versionner les modèles et de valider la qualité avant déploiement.
 
@@ -117,7 +117,7 @@ Après exécution :
  
  -modèle courant mis à jour dans registry/current_model.txt si le gate F1 est passé.
 
-## Entraînement, évaluation et registry du modèle
+## 5.Entraînement, évaluation et registry du modèle
 
    Cette étape permet d’entraîner un modèle de churn client, d’évaluer ses performances et de gérer l’enregistrement du modèle dans un registry, selon une logique MLOps.
 **-Création du fichier d’entraînement et d’évaluation**
@@ -154,7 +154,7 @@ Le fichier src/evaluate.py contient un script qui :
  
  -si le modèle passe le gate F1, il est déclaré comme modèle courant via registry/current_model.txt.
 
- ## Création de l’API de prédiction
+ ## 6.Création de l’API de prédiction
 
  Cette étape consiste à exposer le modèle de churn validé via une API afin de permettre des prédictions en temps réel.
 
@@ -201,7 +201,7 @@ Après exécution
  
  -le service permet une inférence temps réel du modèle entraîné.
 
- ## Détection de la dérive des données
+ ## 7.Détection de la dérive des données
 
    Cette étape permet de surveiller les données reçues en production et de détecter une éventuelle dérive par rapport aux données d’entraînement.
 
@@ -238,7 +238,7 @@ Après exécution
  
  -cette étape permet d’anticiper un retraining du modèle.
 
- ## Gestion des versions et rollback du modèle
+ ## 8.Gestion des versions et rollback du modèle
 
 Cette étape permet de gérer les versions du modèle et de revenir à une version précédente en cas de problème.
 
